@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-from pyngrok import ngrok
 import requests
 import pandas as pd
 import time
@@ -109,8 +108,8 @@ def extract_data():
 
 if __name__ == "__main__":
     # Automatically start an ngrok tunnel
-    public_url = ngrok.connect(5000).public_url
     print("🌐 SkillBridge Flask app is running!")
     print(f"👉 Local:  http://127.0.0.1:5000/extract?jobFamily=Business%20and%20Financial%20Operations")
     print(f"🌎 Public: {public_url}/extract?jobFamily=Business%20and%20Financial%20Operations\n")
     app.run(host="0.0.0.0", port=5000)
+
